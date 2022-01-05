@@ -10,10 +10,26 @@ public class FotoDePerfil implements ValueObject <String> {
 
     public FotoDePerfil(String value) {
         this.value = Objects.requireNonNull(value);
+        if(this.value.isBlank()){
+            throw new IllegalArgumentException("La foto de perfil no puede estar vacía");
+        }
     }
 
     @Override
     public String value() {
-        return null;
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FotoDePerfil that = (FotoDePerfil) o;
+        return Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
 }
