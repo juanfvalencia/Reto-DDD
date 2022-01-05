@@ -12,9 +12,9 @@ public class FechaDeNacimiento implements ValueObject <LocalDate> {
 
     public FechaDeNacimiento(String value) {
         this.value = Objects.requireNonNull(formatoFecha(value), "Fecha de nacimiento null");
-        if (this.value.isAfter(getfechaActual())) {
+
+        if (this.value.isAfter(getfechaActual()))
             throw new IllegalArgumentException("La fecha no es válida");
-        }
     }
 
     protected LocalDate formatoFecha(String fecha) {

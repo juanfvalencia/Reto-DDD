@@ -10,9 +10,8 @@ public class FotoDePerfil implements ValueObject <String> {
 
     public FotoDePerfil(String value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value.isBlank()){
+        if(this.value.isBlank())
             throw new IllegalArgumentException("La foto de perfil no puede estar vacía");
-        }
     }
 
     @Override

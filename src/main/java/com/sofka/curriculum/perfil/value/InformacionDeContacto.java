@@ -11,16 +11,12 @@ public class InformacionDeContacto implements ValueObject <String> {
     public InformacionDeContacto(String value) {
         this.value = Objects.requireNonNull(value);
 
-        if(this.value.isBlank()){
+        if(this.value.isBlank())
             throw new IllegalArgumentException("La información de contacto no pueden estar vacía");
-        }
-        if(this.value.length()>35){
+        if(this.value.length()>35)
             throw new IllegalArgumentException("La información de contacto no puede tener más de 35 caracteres");
-        }
-        if(this.value.length()<10){
+        if(this.value.length()<10)
             throw new IllegalArgumentException("La información de contacto no puede tener menos de 10 caracteres");
-        }
-
     }
 
     @Override

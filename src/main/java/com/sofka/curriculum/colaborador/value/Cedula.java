@@ -10,15 +10,13 @@ public class Cedula implements ValueObject <String> {
 
     public Cedula(String value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value.isBlank()){
+
+        if(this.value.isBlank())
             throw new IllegalArgumentException("La cedula no puede estar vacía");
-        }
-        if(this.value.length()>10){
+        if(this.value.length()>10)
             throw new IllegalArgumentException("La cedula no puede tener más de 10 cartacteres  ");
-        }
-        if (!this.value.matches("[0-9]*")){
+        if (!this.value.matches("[0-9]*"))
             throw new IllegalArgumentException("La cedula sólo puede incluir números");
-        }
     }
 
     @Override
