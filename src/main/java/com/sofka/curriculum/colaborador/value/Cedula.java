@@ -1,14 +1,14 @@
-package com.sofka.curriculum.generics;
+package com.sofka.curriculum.colaborador.value;
 
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Institucion implements ValueObject <String> {
+public class Cedula implements ValueObject <String> {
 
     private final String value;
 
-    public Institucion(String value) {
+    public Cedula(String value) {
         this.value = Objects.requireNonNull(value);
     }
 
