@@ -1,4 +1,4 @@
-package com.sofka.curriculum;
+package com.sofka.curriculum.testevent;
 
 import co.com.sofka.business.generic.BusinessException;
 import co.com.sofka.business.generic.ServiceBuilder;
