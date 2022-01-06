@@ -11,7 +11,7 @@ public class ModificarEstudioEducacion extends Command {
     private final EducacionId educacionId;
     private final Estudio estudio;
 
-    public ModificarEstudioEducacion(GestionEducacionId gestionEducacionId, EducacionId entityId, Estudio estudio) {
+    public ModificarEstudioEducacion(GestionEducacionId gestionEducacionId, Estudio estudio) {
         this.gestionEducacionId = gestionEducacionId;
         this.educacionId = entityId;
         this.estudio = estudio;
