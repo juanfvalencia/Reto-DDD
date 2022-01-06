@@ -7,11 +7,11 @@ public class HojaDeVidaId extends Identity {
     public HojaDeVidaId(){
     }
 
-    public HojaDeVidaId(String uuid){
-        super(uuid);
+    public HojaDeVidaId(String value){
+        super(value);
     }
 
-    public static HojaDeVidaId of(String uuid) {
-        return new HojaDeVidaId(uuid);
+    public static HojaDeVidaId of(String value) {
+        return new HojaDeVidaId(value);
     }
 }
