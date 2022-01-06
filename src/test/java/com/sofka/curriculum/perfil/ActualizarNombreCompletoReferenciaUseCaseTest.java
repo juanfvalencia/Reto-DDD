@@ -1,4 +1,4 @@
-package com.sofka.curriculum;
+package com.sofka.curriculum.perfil;
 
 
 import co.com.sofka.business.generic.UseCaseHandler;
