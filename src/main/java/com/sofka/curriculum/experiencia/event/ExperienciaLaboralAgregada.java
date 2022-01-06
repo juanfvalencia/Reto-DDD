@@ -6,15 +6,15 @@ import com.sofka.curriculum.experiencia.value.ExperienciaLaboralId;
 import com.sofka.curriculum.generics.Institucion;
 import com.sofka.curriculum.generics.Periodo;
 
-public class NuevaExperienciaLaboralAgregada extends DomainEvent {
+public class ExperienciaLaboralAgregada extends DomainEvent {
 
     private final ExperienciaLaboralId experienciaLaboralId;
     private final Institucion institucion;
     private final Periodo periodo;
     private final ConocimientoAdquirido conocimientoAdquirido;
 
-    public NuevaExperienciaLaboralAgregada(ExperienciaLaboralId entityId, Institucion institucion, Periodo periodo, ConocimientoAdquirido conocimientoAdquirido) {
-        super("sofka.experiencia.nuevaexperiencialaboralagregada");
+    public ExperienciaLaboralAgregada(ExperienciaLaboralId entityId, Institucion institucion, Periodo periodo, ConocimientoAdquirido conocimientoAdquirido) {
+        super("sofka.experiencia.experiencialaboralagregada");
         this.experienciaLaboralId = entityId;
         this.institucion = institucion;
         this.periodo = periodo;

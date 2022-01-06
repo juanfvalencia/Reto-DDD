@@ -3,7 +3,7 @@ package com.sofka.curriculum.experiencia;
 import co.com.sofka.domain.generic.EventChange;
 import com.sofka.curriculum.experiencia.event.ConocimientoAdquiridoExperienciaLaboralModificada;
 import com.sofka.curriculum.experiencia.event.ExperienciaCreada;
-import com.sofka.curriculum.experiencia.event.NuevaExperienciaLaboralAgregada;
+import com.sofka.curriculum.experiencia.event.ExperienciaLaboralAgregada;
 import com.sofka.curriculum.experiencia.event.PeriodoExperinciaLaboralActualizado;
 
 public class ExperienciaChange extends EventChange {
@@ -14,7 +14,7 @@ public class ExperienciaChange extends EventChange {
             experiencia.hojaDeVidaId = event.getHojaDeVidaId();
         });
 
-        apply((NuevaExperienciaLaboralAgregada event)->{
+        apply((ExperienciaLaboralAgregada event)->{
             experiencia.experienciaLaboral = new ExperienciaLaboral(
                     event.getExperienciaLaboralId(),
                     event.getInstitucion(),

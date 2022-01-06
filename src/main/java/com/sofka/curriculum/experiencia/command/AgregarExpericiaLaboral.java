@@ -7,7 +7,7 @@ import com.sofka.curriculum.experiencia.value.ExperienciaLaboralId;
 import com.sofka.curriculum.generics.Institucion;
 import com.sofka.curriculum.generics.Periodo;
 
-public class AgregarNuevaExpericiaLaboral extends Command {
+public class AgregarExpericiaLaboral extends Command {
 
     private final ExperienciaId experienciaId;
     private final ExperienciaLaboralId experienciaLaboralId;
@@ -15,7 +15,7 @@ public class AgregarNuevaExpericiaLaboral extends Command {
     private final Institucion institucion;
     private final ConocimientoAdquirido conocimientoAdquirido;
 
-    public AgregarNuevaExpericiaLaboral(ExperienciaId experienciaId, ExperienciaLaboralId entityId, Periodo periodo, Institucion institucion, ConocimientoAdquirido conocimientoAdquirido) {
+    public AgregarExpericiaLaboral(ExperienciaId experienciaId, ExperienciaLaboralId entityId, Periodo periodo, Institucion institucion, ConocimientoAdquirido conocimientoAdquirido) {
         this.experienciaId = experienciaId;
         this.experienciaLaboralId = entityId;
         this.periodo = periodo;

@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import com.sofka.curriculum.experiencia.event.ConocimientoAdquiridoExperienciaLaboralModificada;
 import com.sofka.curriculum.experiencia.event.ExperienciaCreada;
-import com.sofka.curriculum.experiencia.event.NuevaExperienciaLaboralAgregada;
+import com.sofka.curriculum.experiencia.event.ExperienciaLaboralAgregada;
 import com.sofka.curriculum.experiencia.event.PeriodoExperinciaLaboralActualizado;
 import com.sofka.curriculum.experiencia.value.ConocimientoAdquirido;
 import com.sofka.curriculum.experiencia.value.ExperienciaId;
@@ -43,7 +43,7 @@ public class Experiencia extends AggregateEvent<ExperienciaId> {
         Objects.requireNonNull(institucion);
         Objects.requireNonNull(periodo);
         Objects.requireNonNull(conocimientoAdquirido);
-        appendChange(new NuevaExperienciaLaboralAgregada(id, institucion, periodo, conocimientoAdquirido)).apply();
+        appendChange(new ExperienciaLaboralAgregada(id, institucion, periodo, conocimientoAdquirido)).apply();
     }
     public void modificarExperienciaLaboralConocimientoAdquirido(ExperienciaLaboralId entityId,ConocimientoAdquirido conocimientoAdquirido) {
         Objects.requireNonNull(entityId);
