@@ -1,4 +1,4 @@
-package com.sofka.curriculum.usecase;
+package com.sofka.curriculum.usecase.colaborador;
 
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
