@@ -13,8 +13,8 @@ public class NombreCertificacionModificada extends DomainEvent {
 
     public NombreCertificacionModificada(CertificacionId entityId, Nombre nombre) {
         super("sofka.gestioncertificacion.nombrecertificacionmodificada");
-        this.certificacionId = Objects.requireNonNull(entityId);
-        this.nombre = Objects.requireNonNull(nombre);
+        this.certificacionId = entityId;
+        this.nombre = nombre;
     }
 
     public CertificacionId getcertificacionId() {

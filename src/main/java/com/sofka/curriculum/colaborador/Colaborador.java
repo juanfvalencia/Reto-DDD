@@ -25,13 +25,6 @@ public class Colaborador extends AggregateEvent<ColaboradorId> {
     public Colaborador(ColaboradorId entityId, ColaboradorId colaboradorId, HojaDeVidaId hojaDeVidaId,
                        FechaDeNacimiento fechaDeNacimiento, NombreCompleto nombreCompleto, Cedula cedula, Genero genero, Area area) {
         super(entityId);
-        this.colaboradorId = colaboradorId;
-        this.hojaDeVidaId = hojaDeVidaId;
-        this.fechaDeNacimiento = fechaDeNacimiento;
-        this.nombreCompleto = nombreCompleto;
-        this.cedula = cedula;
-        this.genero = genero;
-        this.area = area;
         appendChange(new ColaboradorCreado(entityId, hojaDeVidaId, fechaDeNacimiento, nombreCompleto, cedula,
                 genero, area)).apply();
     }

@@ -25,9 +25,6 @@ public class Perfil extends AggregateEvent<PerfilId> {
 
     public Perfil(PerfilId entityId, HojaDeVidaId hojaDeVidaId, FotoDePerfil fotoDePerfil, InformacionDeContacto informacionDeContacto) {
         super(entityId);
-        this.hojaDeVidaId = hojaDeVidaId;
-        this.fotoDePerfil = fotoDePerfil;
-        this.informacionDeContacto = informacionDeContacto;
         appendChange(new PerfilCreado(entityId, hojaDeVidaId, fotoDePerfil, informacionDeContacto)).apply();
     }
 

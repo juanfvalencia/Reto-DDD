@@ -12,7 +12,7 @@ public class ExperienciaCreada extends DomainEvent {
 
     public ExperienciaCreada(HojaDeVidaId hojaDeVidaId ) {
         super("sofka.experiencia.experienciacreada");
-        this.hojaDeVidaId = Objects.requireNonNull(hojaDeVidaId);
+        this.hojaDeVidaId = hojaDeVidaId;
     }
 
     public HojaDeVidaId getHojaDeVidaId() {

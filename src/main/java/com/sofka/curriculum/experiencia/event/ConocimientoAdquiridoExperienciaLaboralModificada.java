@@ -13,8 +13,8 @@ public class ConocimientoAdquiridoExperienciaLaboralModificada extends DomainEve
 
     public ConocimientoAdquiridoExperienciaLaboralModificada(ExperienciaLaboralId entityId, ConocimientoAdquirido conocimientoAdquirido) {
         super("sofka.experiencia.conocimientoadquiridoexperiencialaboralmodificada");
-        this.experienciaLaboralId = Objects.requireNonNull(entityId);
-        this.conocimientoAdquirido = Objects.requireNonNull(conocimientoAdquirido);
+        this.experienciaLaboralId = entityId;
+        this.conocimientoAdquirido = conocimientoAdquirido;
     }
 
     public ExperienciaLaboralId getexperienciaLaboralId() {

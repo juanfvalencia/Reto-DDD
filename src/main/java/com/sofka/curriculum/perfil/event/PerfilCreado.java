@@ -6,7 +6,6 @@ import com.sofka.curriculum.perfil.value.FotoDePerfil;
 import com.sofka.curriculum.perfil.value.InformacionDeContacto;
 import com.sofka.curriculum.perfil.value.PerfilId;
 
-import java.util.Objects;
 
 public class PerfilCreado extends DomainEvent {
 
@@ -19,8 +18,8 @@ public class PerfilCreado extends DomainEvent {
         super("sofka.perfil.perfilcreado");
         this.perfilId = entityId;
         this.hojaDeVidaId = hojaDeVidaId;
-        this.fotoDePerfil = Objects.requireNonNull(fotoDePerfil);
-        this.informacionDeContacto = Objects.requireNonNull(informacionDeContacto);
+        this.fotoDePerfil = fotoDePerfil;
+        this.informacionDeContacto = informacionDeContacto;
     }
 
     public PerfilId getPerfilId() {

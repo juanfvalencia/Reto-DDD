@@ -24,7 +24,6 @@ public class GestionEducacion extends AggregateEvent<GestionEducacionId> {
 
     public GestionEducacion(GestionEducacionId entityId, HojaDeVidaId hojaDeVidaId) {
         super(entityId);
-        this.hojaDeVidaId = hojaDeVidaId;
         appendChange(new GestionEducacionCreado(hojaDeVidaId)).apply();
     }
 

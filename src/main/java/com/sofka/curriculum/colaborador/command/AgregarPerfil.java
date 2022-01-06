@@ -4,16 +4,15 @@ import co.com.sofka.domain.generic.Command;
 import com.sofka.curriculum.colaborador.value.ColaboradorId;
 import com.sofka.curriculum.perfil.value.PerfilId;
 
-import java.util.Objects;
 
 public class AgregarPerfil extends Command {
 
     private final ColaboradorId colaboradorId;
     private final PerfilId perfilId;
 
-    public AgregarPerfil(ColaboradorId colaboradorID, PerfilId perfilId) {
-        this.colaboradorId = Objects.requireNonNull(colaboradorID);
-        this.perfilId = Objects.requireNonNull(perfilId);
+    public AgregarPerfil(ColaboradorId colaboradorId, PerfilId perfilId) {
+        this.colaboradorId = colaboradorId;
+        this.perfilId = perfilId;
     }
 
     public ColaboradorId getColaboradorId() {

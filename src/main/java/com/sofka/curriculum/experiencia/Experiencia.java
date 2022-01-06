@@ -23,7 +23,6 @@ public class Experiencia extends AggregateEvent<ExperienciaId> {
 
     public Experiencia(ExperienciaId entityId, HojaDeVidaId hojaDeVidaId) {
         super(entityId);
-        this.hojaDeVidaId = Objects.requireNonNull(hojaDeVidaId);
         appendChange(new ExperienciaCreada(hojaDeVidaId)).apply();
     }
 

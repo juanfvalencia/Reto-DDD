@@ -5,7 +5,6 @@ import com.sofka.curriculum.colaborador.value.*;
 import com.sofka.curriculum.generics.HojaDeVidaId;
 import com.sofka.curriculum.generics.NombreCompleto;
 
-import java.util.Objects;
 
 public class ColaboradorCreado extends DomainEvent {
 
@@ -20,13 +19,13 @@ public class ColaboradorCreado extends DomainEvent {
     public ColaboradorCreado(ColaboradorId entityId, HojaDeVidaId hojaDeVidaId, FechaDeNacimiento fechaDeNacimiento,
                              NombreCompleto nombreCompleto, Cedula cedula, Genero genero, Area area) {
         super("sofka.colaborador.colaboradorcreado");
-        this.colaboradorId = Objects.requireNonNull(entityId);
-        this.hojaDeVidaId = Objects.requireNonNull(hojaDeVidaId);
-        this.fechaDeNacimiento = Objects.requireNonNull(fechaDeNacimiento);
-        this.nombreCompleto = Objects.requireNonNull(nombreCompleto);
-        this.cedula = Objects.requireNonNull(cedula);
-        this.genero = Objects.requireNonNull(genero);
-        this.area = Objects.requireNonNull(area);
+        this.colaboradorId = entityId;
+        this.hojaDeVidaId = hojaDeVidaId;
+        this.fechaDeNacimiento = fechaDeNacimiento;
+        this.nombreCompleto = nombreCompleto;
+        this.cedula = cedula;
+        this.genero = genero;
+        this.area = area;
     }
 
     public ColaboradorId getColaboradorId() {

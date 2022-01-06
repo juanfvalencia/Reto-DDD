@@ -4,7 +4,6 @@ import co.com.sofka.domain.generic.Command;
 import com.sofka.curriculum.colaborador.value.ColaboradorId;
 import com.sofka.curriculum.generics.NombreCompleto;
 
-import java.util.Objects;
 
 public class ModificarNombreCompleto extends Command {
 
@@ -12,8 +11,8 @@ public class ModificarNombreCompleto extends Command {
     private final NombreCompleto nombreCompleto;
 
     public ModificarNombreCompleto(ColaboradorId colaboradorId, NombreCompleto nombreCompleto) {
-        this.colaboradorId = Objects.requireNonNull(colaboradorId);
-        this.nombreCompleto = Objects.requireNonNull(nombreCompleto);
+        this.colaboradorId = colaboradorId;
+        this.nombreCompleto = nombreCompleto;
     }
 
     public ColaboradorId getColaboradorId() {

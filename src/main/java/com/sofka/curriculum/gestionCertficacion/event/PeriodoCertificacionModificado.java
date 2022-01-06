@@ -13,8 +13,8 @@ public class PeriodoCertificacionModificado extends DomainEvent {
 
     public PeriodoCertificacionModificado(CertificacionId entityId, Periodo periodo) {
         super("sofka.gestioncertificacion.periodocertificacionmodificado");
-        this.certificacionId = Objects.requireNonNull(entityId);
-        this.periodo = Objects.requireNonNull(periodo);
+        this.certificacionId = entityId;
+        this.periodo = periodo;
     }
 
     public CertificacionId getcertificacionId() {

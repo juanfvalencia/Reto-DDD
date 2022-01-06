@@ -17,10 +17,10 @@ public class NuevaCertificacionAgregada extends DomainEvent {
 
     public NuevaCertificacionAgregada(CertificacionId certificacionID, Nombre nombre, Institucion institucion, Periodo periodo) {
         super("sofka.gestioncertificacion.nuevacertificacionagregada");
-        this.certificacionId = Objects.requireNonNull(certificacionID);
-        this.nombre = Objects.requireNonNull(nombre);
-        this.institucion = Objects.requireNonNull(institucion);
-        this.periodo = Objects.requireNonNull(periodo);
+        this.certificacionId = certificacionID;
+        this.nombre = nombre;
+        this.institucion = institucion;
+        this.periodo = periodo;
     }
 
     public CertificacionId getCertificacionId() {

@@ -4,7 +4,6 @@ import co.com.sofka.domain.generic.Command;
 import com.sofka.curriculum.colaborador.value.ColaboradorId;
 import com.sofka.curriculum.colaborador.value.Genero;
 
-import java.util.Objects;
 
 public class ModificarGenero extends Command {
 
@@ -12,8 +11,8 @@ public class ModificarGenero extends Command {
     private final Genero genero;
 
     public ModificarGenero(ColaboradorId colaboradorId, Genero genero) {
-        this.colaboradorId = Objects.requireNonNull(colaboradorId);
-        this.genero = Objects.requireNonNull(genero);
+        this.colaboradorId = colaboradorId;
+        this.genero = genero;
     }
 
     public ColaboradorId getColaboradorId() {

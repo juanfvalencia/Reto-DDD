@@ -12,8 +12,8 @@ public class ModificarExperienciaLaboralConocimientoAdquirido extends Command {
     private final ConocimientoAdquirido conocimientoAdquirido;
 
     public ModificarExperienciaLaboralConocimientoAdquirido(ExperienciaId entityId, ConocimientoAdquirido conocimientoAdquirido) {
-        this.experienciaId = Objects.requireNonNull(entityId);
-        this.conocimientoAdquirido = Objects.requireNonNull(conocimientoAdquirido);
+        this.experienciaId = entityId;
+        this.conocimientoAdquirido = conocimientoAdquirido;
     }
 
     public ExperienciaId getExperienciaId() {

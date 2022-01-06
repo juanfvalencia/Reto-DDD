@@ -14,7 +14,7 @@ public class PeriodoExperinciaLaboralActualizado extends DomainEvent {
     public PeriodoExperinciaLaboralActualizado(ExperienciaLaboralId entityId, Periodo periodo) {
         super("sofka.experiencia.periodoexperiencialaboralactualizada");
         this.experienciaLaboralId = Objects.requireNonNull(entityId);
-        this.periodo = Objects.requireNonNull(periodo);
+        this.periodo = periodo;
     }
 
     public ExperienciaLaboralId getexperienciaLaboralId() {

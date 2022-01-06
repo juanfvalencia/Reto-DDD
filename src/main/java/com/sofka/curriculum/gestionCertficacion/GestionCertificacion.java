@@ -23,7 +23,6 @@ public class GestionCertificacion extends AggregateEvent<GestionCertificacionId>
 
     public GestionCertificacion(GestionCertificacionId entityId, HojaDeVidaId hojaDeVidaId) {
         super(entityId);
-        this.hojaDeVidaId = hojaDeVidaId;
         appendChange(new GestionCertifiacionCreada(hojaDeVidaId)).apply();
     }
 

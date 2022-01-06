@@ -4,7 +4,6 @@ import co.com.sofka.domain.generic.DomainEvent;
 import com.sofka.curriculum.colaborador.value.Area;
 import com.sofka.curriculum.colaborador.value.ColaboradorId;
 
-import java.util.Objects;
 
 public class AreaModificada extends DomainEvent {
 
@@ -13,8 +12,8 @@ public class AreaModificada extends DomainEvent {
 
     public AreaModificada(ColaboradorId colaboradorId, Area area) {
         super("sofka.colaborador.areamodificada");
-        this.colaboradorId = Objects.requireNonNull(colaboradorId);
-        this.area = Objects.requireNonNull(area);
+        this.colaboradorId = colaboradorId;
+        this.area = area;
     }
 
     public ColaboradorId getColaboradorId() {
