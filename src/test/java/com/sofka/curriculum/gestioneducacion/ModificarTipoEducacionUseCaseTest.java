@@ -1,4 +1,4 @@
-package com.sofka.curriculum;
+package com.sofka.curriculum.gestioneducacion;
 
 
 import co.com.sofka.business.generic.UseCaseHandler;
@@ -35,6 +35,7 @@ public class ModificarTipoEducacionUseCaseTest {
     void modificarTipoEducacionUseCaseTest(){
 
         var command = new ModificarTipoEducacion(GestionEducacionId.of("xxxx"),
+                new EducacionId(),
                 new Tipo("Materia"));
 
         var useCase = new ModificarTipoEducacionUseCase();

@@ -49,7 +49,7 @@ public class ActualizarNombreCompletoReferenciaUseCaseTest {
                 .orElseThrow();
 
         NombreCompletoReferenciaActualizado event = (NombreCompletoReferenciaActualizado) events.getDomainEvents().get(0);
-        Assertions.assertEquals("Juan" + "Valencia", event.getNombreCompleto().value());
+        Assertions.assertEquals("Juan " + "Valencia", event.getNombreCompleto().value());
         Mockito.verify(domainEventRepository).getEventsBy("xxxx");
     }
 

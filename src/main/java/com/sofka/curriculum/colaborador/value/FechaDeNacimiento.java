@@ -2,37 +2,32 @@ package com.sofka.curriculum.colaborador.value;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class FechaDeNacimiento implements ValueObject <LocalDate> {
+public class FechaDeNacimiento implements ValueObject <String> {
 
-    private final LocalDate value;
+    private LocalDate fechaDeNacimiento;
+    private final String format;
 
-    public FechaDeNacimiento(String value) {
-        this.value = Objects.requireNonNull(formatoFecha(value), "Fecha de nacimiento null");
+    public FechaDeNacimiento(int day, int month, int year) {
+        this.fechaDeNacimiento = fechaDeNacimiento;
 
-        if (this.value.isAfter(getfechaActual()))
-            throw new IllegalArgumentException("La fecha no es válida");
+        try {
+             fechaDeNacimiento = LocalDate.of(year, month, day);
+            if(fechaDeNacimiento.isAfter(LocalDate.now())){
+                throw new IllegalArgumentException("La fecha ingresada no es válida");
+            }
+        } catch (DateTimeException e){
+            throw new IllegalArgumentException(e.getMessage());
+        }
+        format = generateFormat();
     }
 
-    protected LocalDate formatoFecha(String fecha) {
-        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        return LocalDate.parse(fecha, formateador);
-    }
-
-    protected LocalDate getfechaActual() {
-        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate fechaActual = LocalDate.now();
-        String fechaActualStr = fechaActual.format(formateador);
-        return formatoFecha(fechaActualStr);
-
-    }
-
-    @Override
-    public LocalDate value() {
-        return value;
+    private String generateFormat() {
+        return fechaDeNacimiento.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }
 
     @Override
@@ -40,11 +35,16 @@ public class FechaDeNacimiento implements ValueObject <LocalDate> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FechaDeNacimiento that = (FechaDeNacimiento) o;
-        return Objects.equals(value, that.value);
+        return Objects.equals(fechaDeNacimiento, that.fechaDeNacimiento) && Objects.equals(format, that.format);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(fechaDeNacimiento, format);
+    }
+
+    @Override
+    public String value() {
+        return format;
     }
 }

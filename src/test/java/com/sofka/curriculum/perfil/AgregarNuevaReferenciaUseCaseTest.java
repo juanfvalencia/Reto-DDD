@@ -32,7 +32,7 @@ public class AgregarNuevaReferenciaUseCaseTest {
     void agregarNuevaReferenciaUseCaseTest(){
 
         var command = new AgregarNuevaReferencia(PerfilId.of("xxxx"), ReferenciaId.of("1"),
-                new NombreCompleto("Juan Felipe","Valencia"),
+                new NombreCompleto("Juan ","Valencia"),
                 new InformacionDeContacto("Union Libre"));
 
         var useCase = new AgregarNuevaReferenciaUseCase();
@@ -46,14 +46,14 @@ public class AgregarNuevaReferenciaUseCaseTest {
                 .orElseThrow();
 
         NuevaReferenciaAgregada event = (NuevaReferenciaAgregada) events.getDomainEvents().get(0);
-        Assertions.assertEquals("Juan Felipe"+"Valencia", event.getNombreCompleto().value());
+        Assertions.assertEquals("Juan "+"Valencia", event.getNombreCompleto().value());
         Assertions.assertEquals("Union Libre", event.getInformacionDeContacto().value());
     }
 
     private List<DomainEvent> eventlist(){
         return List.of(new NuevaReferenciaAgregada(
                 new ReferenciaId(),
-                new NombreCompleto("Juan Felipe","Valencia"),
+                new NombreCompleto("Juan ","Valencia"),
                 new InformacionDeContacto("Union Libre")
         ));
     }
