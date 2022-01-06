@@ -11,7 +11,7 @@ public class ModificarTipoEducacion extends Command {
     private final EducacionId educacionId;
     private final Tipo tipo;
 
-    public ModificarTipoEducacion(GestionEducacionId gestionEducacionId, EducacionId entityId, Tipo tipo) {
+    public ModificarTipoEducacion(GestionEducacionId gestionEducacionId, Tipo tipo) {
         this.gestionEducacionId = gestionEducacionId;
         this.educacionId = entityId;
         this.tipo = tipo;
