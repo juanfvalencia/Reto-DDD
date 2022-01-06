@@ -11,6 +11,7 @@ public class PerfilChange extends EventChange {
     public PerfilChange(Perfil perfil){
 
         apply((PerfilCreado event) -> {
+            perfil.hojaDeVidaId = event.getHojaDeVidaId();
             perfil.informacionDeContacto = event.getInformacionDeContacto();
             perfil.fotoDePerfil = event.getFotoDePerfil();
         });

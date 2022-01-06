@@ -2,6 +2,7 @@ package com.sofka.curriculum.perfil;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import com.sofka.curriculum.generics.HojaDeVidaId;
 import com.sofka.curriculum.generics.NombreCompleto;
 import com.sofka.curriculum.perfil.event.InformacionDeContactoReferenciaActualizada;
 import com.sofka.curriculum.perfil.event.NombreCompletoReferenciaActualizado;
@@ -17,15 +18,17 @@ import java.util.Objects;
 
 public class Perfil extends AggregateEvent<PerfilId> {
 
+    protected HojaDeVidaId hojaDeVidaId;
     protected FotoDePerfil fotoDePerfil;
     protected InformacionDeContacto informacionDeContacto;
     protected Referencia referencia;
 
-    public Perfil(PerfilId entityId, FotoDePerfil fotoDePerfil, InformacionDeContacto informacionDeContacto) {
+    public Perfil(PerfilId entityId, HojaDeVidaId hojaDeVidaId, FotoDePerfil fotoDePerfil, InformacionDeContacto informacionDeContacto) {
         super(entityId);
+        this.hojaDeVidaId = hojaDeVidaId;
         this.fotoDePerfil = fotoDePerfil;
         this.informacionDeContacto = informacionDeContacto;
-        appendChange(new PerfilCreado(entityId, fotoDePerfil, informacionDeContacto)).apply();
+        appendChange(new PerfilCreado(entityId, hojaDeVidaId, fotoDePerfil, informacionDeContacto)).apply();
     }
 
     private Perfil(PerfilId perfilId){
@@ -56,6 +59,10 @@ public class Perfil extends AggregateEvent<PerfilId> {
 
     public FotoDePerfil fotoDePerfil(){
         return fotoDePerfil;
+    }
+
+    public HojaDeVidaId hojaDeVidaId(){
+        return hojaDeVidaId;
     }
 
     public InformacionDeContacto informacionDeContacto(){

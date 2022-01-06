@@ -3,14 +3,15 @@ package com.sofka.curriculum.generics;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Periodo implements ValueObject <Periodo.Properties> {
 
-    private final LocalDate fechaInicio;
-    private final LocalDate fechaFin;
+    private final LocalDateTime fechaInicio;
+    private final LocalDateTime fechaFin;
 
-    public Periodo(LocalDate fechaInicio, LocalDate fechaFin) {
+    public Periodo(LocalDateTime fechaInicio, LocalDateTime fechaFin) {
         this.fechaInicio = Objects.requireNonNull(fechaInicio, "La fecha de inicio no puede ser null");
         this.fechaFin = Objects.requireNonNull(fechaFin, "La fecha de fin no puede ser null");
 
@@ -19,8 +20,8 @@ public class Periodo implements ValueObject <Periodo.Properties> {
     }
 
     public interface Properties{
-        LocalDate fechaInicio();
-        LocalDate fechaFin();
+        LocalDateTime fechaInicio();
+        LocalDateTime fechaFin();
 
     }
 
@@ -28,12 +29,12 @@ public class Periodo implements ValueObject <Periodo.Properties> {
     public Properties value(){
         return new Properties() {
             @Override
-            public LocalDate fechaInicio() {
+            public LocalDateTime fechaInicio() {
                 return null;
             }
 
             @Override
-            public LocalDate fechaFin() {
+            public LocalDateTime fechaFin() {
                 return null;
             }
         };
