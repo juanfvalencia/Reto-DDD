@@ -1,4 +1,4 @@
-package com.sofka.curriculum;
+package com.sofka.curriculum.gestioncertificacion;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
