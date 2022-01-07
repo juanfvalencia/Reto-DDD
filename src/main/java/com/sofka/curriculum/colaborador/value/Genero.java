@@ -14,8 +14,6 @@ public class Genero implements ValueObject <String> {
             throw new IllegalArgumentException("El genero no puede estar vacio");
         if (!this.value.equals("M")&&!this.value.equals("F"))
             throw new IllegalArgumentException("El genero no puede ser diferente de M o F");
-        if (this.value.matches("^[\\p{L} .'-]+$"))
-            throw new IllegalArgumentException("El genero no puede tener caracteres especiales, ni numeros");
     }
 
     @Override

@@ -13,10 +13,8 @@ public class Area implements ValueObject <String> {
 
         if(this.value.isBlank())
             throw new IllegalArgumentException("El area no puede estar vacía");
-        if(this.value.length()>25)
-            throw new IllegalArgumentException("El area no puede tener más de 25 caracteres");
-        if (this.value.matches("^[\\p{L} .'-]+$"))
-            throw new IllegalArgumentException("El area no puede tener caracteres especiales, ni numeros");
+        if(this.value.length()<4 || this.value.length()>25)
+            throw new IllegalArgumentException("El area no puede tener menos de 4 caracteres o más de 25 caracteres");
     }
 
     @Override

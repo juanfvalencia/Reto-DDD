@@ -13,8 +13,9 @@ public class Nombre implements ValueObject<String> {
 
         if (this.value.isBlank())
             throw new IllegalArgumentException("El nombre no puede estar vacio");
-        if (this.value.matches("^[\\p{L} .'-]+$"))
-            throw new IllegalArgumentException("El nombre no puede tener caracteres especiales, ni numeros");
+        if(this.value.length() > 100){
+            throw new IllegalArgumentException("El nombre de la certificación no puede contener más de 100 carácteres");
+        }
     }
 
     @Override

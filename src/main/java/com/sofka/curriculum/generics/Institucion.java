@@ -9,19 +9,17 @@ public class Institucion implements ValueObject <String> {
     private final String nombre;
 
     public Institucion(String nombre) {
-        this.nombre = Objects.requireNonNull(nombre);
+        this.nombre = Objects.requireNonNull(nombre, "El nombre no puede ser nulo");
 
         if(this.nombre.isBlank())
             throw new IllegalArgumentException("El nombre de la institución no puede estar vacío");
-        if(this.nombre.length()>35)
-            throw new IllegalArgumentException("El nombre de la institución no puede tener más de 35 caracteres");
-        if (this.nombre.matches("^[\\p{L} .'-]+$"))
-            throw new IllegalArgumentException("El nombre de la institución no puede tener caracteres especiales, ni numeros");
+        if(this.nombre.length()==0 || this.nombre.length()>50)
+            throw new IllegalArgumentException("El nombre de la institución no puede tener menos de 5 caracteres o más de 50 caracteres");
     }
 
     @Override
     public String value() {
-        return null;
+        return nombre;
     }
 
     @Override
